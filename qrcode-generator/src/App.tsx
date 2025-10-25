@@ -1,5 +1,12 @@
+import { QrcodegeneratorPage } from "./qrcodegenerator/QrcodegeneratorPage";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      {" "}
+      <QrcodegeneratorPage />
+    </>
+  );
 }
 
 export default App;

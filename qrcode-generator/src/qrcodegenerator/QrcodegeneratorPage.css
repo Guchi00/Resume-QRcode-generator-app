@@ -24,4 +24,14 @@
   align-items: center;
   justify-content: space-between;
   padding-left: 50px;
+
+  h4 {
+    color: rgb(251, 255, 252);
+  }
+}
+
+.formandChartContainer {
+  display: flex;
+  justify-content: space-around;
+  /* border: solid 1px; */
 }
