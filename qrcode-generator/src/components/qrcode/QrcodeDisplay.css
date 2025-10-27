@@ -8,12 +8,13 @@
 }
 
 .qrcode {
-  height: 250px;
+  height: 265px;
   width: 100%;
   /* border: solid 1px rgb(232, 232, 232); */
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .actions {

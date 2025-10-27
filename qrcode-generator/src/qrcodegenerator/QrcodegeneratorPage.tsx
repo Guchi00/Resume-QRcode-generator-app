@@ -63,7 +63,11 @@ export const QrcodegeneratorPage = () => {
             handleFile={handleFileChange}
             handleGenerateQRCode={handleGenerate}
           />
-          <QrcodeDisplay showQRCode={showQRCode} />
+          <QrcodeDisplay
+            showQRCode={showQRCode}
+            resumeFile={resumeFile}
+            resumeLink={resumeLink}
+          />
         </div>
       </div>
     </div>
