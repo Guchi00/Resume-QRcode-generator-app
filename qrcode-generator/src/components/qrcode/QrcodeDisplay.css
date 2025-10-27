@@ -1,0 +1,49 @@
+.qrcodecontainer {
+  height: 420px;
+  width: 330px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* border: solid 1px rgb(232, 233, 235); */
+}
+
+.qrcode {
+  height: 250px;
+  width: 100%;
+  /* border: solid 1px rgb(232, 232, 232); */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 250px;
+  /* border: solid 1px; */
+}
+
+.downloadbtn {
+  height: 40px;
+  background-color: rgb(48, 136, 255);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.sharebtn {
+  height: 40px;
+  border-radius: 8px;
+  color: rgb(48, 136, 255);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;
+  border: solid 1px rgb(48, 136, 255);
+}

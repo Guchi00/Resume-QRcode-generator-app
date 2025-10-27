@@ -7,7 +7,7 @@
 }
 
 .form {
-  height: 350px;
+  height: 330px;
   width: 100%;
   border: solid 1px rgb(232, 232, 232);
   border-radius: 10px;
@@ -36,9 +36,11 @@
 
     input {
       height: 30px;
-      width: 100%;
+      width: 96%;
       outline: none !important;
       margin: 0px;
+      /* border-radius: 3px !important; */
+      /* border: solid 1px rgb(232, 232, 232); */
     }
   }
 }
