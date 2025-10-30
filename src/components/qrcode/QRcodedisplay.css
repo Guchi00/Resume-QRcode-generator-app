@@ -48,3 +48,9 @@
   background-color: #fff;
   border: solid 1px rgb(48, 136, 255);
 }
+
+@media (min-width: 768px) {
+  .sharebtn {
+    display: none;
+  }
+}
