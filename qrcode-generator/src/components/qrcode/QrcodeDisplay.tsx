@@ -1,15 +1,13 @@
 import { QRCodeCanvas } from "qrcode.react";
-import "./QrcodeDisplay.css";
-import { useRef } from "react";
+import "./QRcodedisplay.css";
 
 export interface QRCodeDisplayProps {
   showQRCode: boolean;
   resumeLink: string;
-  resumeFile: File | null;
 }
 
-export const QrcodeDisplay = (props: QRCodeDisplayProps) => {
-  const { showQRCode, resumeFile, resumeLink } = props;
+export const QRcodedisplay = (props: QRCodeDisplayProps) => {
+  const { showQRCode, resumeLink } = props;
 
   const handleDownload = () => {
     const canvas = document.querySelector("canvas");
@@ -47,8 +45,6 @@ export const QrcodeDisplay = (props: QRCodeDisplayProps) => {
       }
     });
   };
-
-  console.log(resumeLink);
 
   return (
     <div className="qrcodecontainer">

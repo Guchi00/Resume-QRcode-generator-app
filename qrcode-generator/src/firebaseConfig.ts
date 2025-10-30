@@ -1,14 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyB2thcHQ-40jJZRP0u4_B4y0Hlu98ARbbg",
-  authDomain: "resume-qrcode-generator.firebaseapp.com",
-  projectId: "resume-qrcode-generator",
-  storageBucket: "resume-qrcode-generator.firebasestorage.app",
-  messagingSenderId: "810679271267",
-  appId: "1:810679271267:web:8455ce4a77b7b3a790dd56",
-  measurementId: "G-D93KK30WFP",
+const firebaseConfig = {
+  apiKey: "AIzaSyCFlmPbbkZ0_9ynw3rQKMSkFkQJ_JFqKKE",
+  authDomain: "resumeqrcodes.firebaseapp.com",
+  projectId: "resumeqrcodes",
+  storageBucket: "resumeqrcodes.firebasestorage.app",
+  messagingSenderId: "935870621427",
+  appId: "1:935870621427:web:1f723324fdbfc8507eb986",
 };
 
 const app = initializeApp(firebaseConfig);
