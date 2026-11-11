@@ -1,14 +1,14 @@
 import { useState, type ChangeEvent } from "react";
 import "./QrcodegeneratorPage.css";
 import { Form } from "../components/form/Form";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { storage } from "../firebaseConfig";
+// import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+// import { storage } from "../firebaseConfig";
 import { QRcodedisplay } from "../components/qrcode/QRcodedisplay";
 
 export const QrcodegeneratorPage = () => {
   const [resumeLink, setResumeLink] = useState<string>("");
   const [showQRCode, setShowQRCode] = useState(false);
-  const [uploading, setUploading] = useState(false);
+  const [uploading] = useState(false);
 
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files?.length) return;
