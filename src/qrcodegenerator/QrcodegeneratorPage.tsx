@@ -14,7 +14,7 @@ export const QrcodegeneratorPage = () => {
     if (!event.target.files?.length) return;
 
     alert(
-      "Resume upload is temporarily. Please use the Resume Link option to generate your QR code.",
+      "Resume upload is temporarily unavailable. Please use the Resume Link option to generate your QR code.",
     );
 
     event.target.value = "";
