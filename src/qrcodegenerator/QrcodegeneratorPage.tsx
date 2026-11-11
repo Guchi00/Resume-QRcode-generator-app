@@ -6,39 +6,38 @@ import { storage } from "../firebaseConfig";
 import { QRcodedisplay } from "../components/qrcode/QRcodedisplay";
 
 export const QrcodegeneratorPage = () => {
-  const [resumeFile] = useState<File | null>(null);
   const [resumeLink, setResumeLink] = useState<string>("");
   const [showQRCode, setShowQRCode] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files.length > 0) {
-      const file = event.target.files[0];
+    if (!event.target.files?.length) return;
 
-      const storageRef = ref(storage, `resumes/${file.name}`);
-      await uploadBytes(storageRef, file);
-      const url = await getDownloadURL(storageRef);
-      localStorage.setItem("resumeLink", url);
-      setResumeLink(url);
-    }
+    alert(
+      "Resume upload is temporarily. Please use the Resume Link option to generate your QR code.",
+    );
+
+    event.target.value = "";
   };
 
   const handleLinkChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setResumeLink(event?.target.value);
+    setResumeLink(event.target.value);
+    setShowQRCode(false);
   };
 
-  const handleGenerate = () => {
-    if (!resumeFile && !resumeLink) {
-      return alert("Upload a file or enter resume URL");
+  const handleQrCodeGenerate = () => {
+    if (uploading) {
+      alert("Please wait for your resume to finish uploading.");
+      return;
     }
-    if (resumeFile && resumeLink) {
-      return alert("Please upload a file OR enter a resume URL — not both.");
+
+    if (!resumeLink.trim()) {
+      alert("Please upload a resume or enter a resume URL.");
+      return;
     }
+
+    localStorage.setItem("resumeLink", resumeLink);
     setShowQRCode(true);
-    if (resumeLink) {
-      localStorage.setItem("resumeLink", resumeLink);
-    } else if (resumeFile) {
-      localStorage.setItem("resumeFileName", resumeFile.name);
-    }
   };
 
   return (
@@ -51,7 +50,7 @@ export const QrcodegeneratorPage = () => {
           <Form
             handleLink={handleLinkChange}
             handleFile={handleFileChange}
-            handleGenerateQRCode={handleGenerate}
+            handleGenerateQRCode={handleQrCodeGenerate}
           />
           <QRcodedisplay showQRCode={showQRCode} resumeLink={resumeLink} />
         </div>
